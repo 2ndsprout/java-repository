@@ -1,6 +1,7 @@
-package org.example.domain;
+package org.example.model;
 
 import org.example.base.CommonUtil;
+import org.example.view.ArticleView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +12,6 @@ public class ArticleController { // Model + Controller
     CommonUtil commonUtil = new CommonUtil();
     ArticleView articleView = new ArticleView();
     ArticleRepository articleRepository = new ArticleRepository();
-
     Scanner scan = commonUtil.getScanner();
     int WRONG_VALUE = -1;
 

@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.model;
 
 import org.example.base.CommonUtil;
 
@@ -61,12 +61,11 @@ public class ArticleRepository {
         return articleList;
     }
 
-    public Article saveArticle(String title, String body) {
+    public void saveArticle(String title, String body) {
 
         Article article = new Article(latestArticleId, title, body, 0, commonUtil.getCurrentDateTime());
         articleList.add(article);
         latestArticleId++;
 
-        return article;
     }
 }

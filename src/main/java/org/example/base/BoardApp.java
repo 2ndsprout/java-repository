@@ -1,18 +1,16 @@
 package org.example.base;
 
-import org.example.domain.ArticleController;
-
-import java.util.Scanner;
+import org.example.model.ArticleController;
 
 public class BoardApp {
     ArticleController articleController = new ArticleController();
-    Scanner scan = new Scanner(System.in);
+    CommonUtil commonUtil = new CommonUtil();
     public void run() {
 
         while (true) { // 반복 조건이 true이기 때문에 무한 반복
 
             System.out.print("명령어 : ");
-            String cmd = scan.nextLine();
+            String cmd = commonUtil.getScanner().nextLine();
             if(cmd.equals("exit")) {
                 System.out.println("프로그램을 종료합니다.");
                 break;
