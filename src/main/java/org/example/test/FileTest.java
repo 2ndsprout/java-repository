@@ -1,4 +1,6 @@
 package org.example.test;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.base.CommonUtil;
 import org.example.model.Article;
@@ -12,7 +14,20 @@ import java.util.Scanner;
 
 public class FileTest {
     public static void main(String[] args) {
+        ObjectMapper mapper = new ObjectMapper();
 
+        try {
+
+            Article a1 = mapper.readValue(new File("article.json"), Article.class);
+
+            System.out.println(a1.getTitle());
+            System.out.println(a1.getBody());
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void jsonWrite () {
         CommonUtil commonUtil = new CommonUtil();
         Article a1 = new Article(1, "안녕하세요 반갑습니다. 자바 공부중이에요.", "냉무", 0, commonUtil.getCurrentDateTime());
 

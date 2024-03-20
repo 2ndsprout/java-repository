@@ -1,9 +1,10 @@
 package org.example.base;
 
 import org.example.model.ArticleController;
+import org.example.model.ArticleTestController;
 
 public class BoardApp {
-    ArticleController articleController = new ArticleController();
+    ArticleTestController articleController = new ArticleTestController();
     CommonUtil commonUtil = new CommonUtil();
     public void run() {
 
@@ -19,10 +20,10 @@ public class BoardApp {
             switch (cmd) {
                 case "add" -> articleController.add();
                 case "list" -> articleController.list();
-                case "update" -> articleController.update();
-                case "delete" -> articleController.delete();
-                case "detail" -> articleController.detail();
-                case "search" -> articleController.search();
+//                case "update" -> articleController.update();
+//                case "delete" -> articleController.delete();
+//                case "detail" -> articleController.detail();
+//                case "search" -> articleController.search();
                 default -> System.out.println("올바른 명령어가 아닙니다.");
             }
         }
